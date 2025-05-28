@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #2e2e2e, #121212);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-principal {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* horizontal */
+  align-items: center; /* vertical */
+  position: relative;
+}
+
+.logo-principal {
+  text-align: center;
+}
+
+.logo-principal p {
+  color: white;
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+/* Botones abajo */
+.botones {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  margin: 3px;
+  padding: 12px 70px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.boton-verde {
+  background-color: #1ed760;
+  color: black;
+  border: none;
+}
+
+.con-borde {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.botones-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-link,
+.signup-link a {
+  color: white;
+  display: block;
+  text-align: center;
+  margin: 12px;
+  font-size: 20px;
+}
+
+.signup-link a {
+  font-weight: bold;
+}
+
+.logo-principal-login {
+  margin: 50px 50px 120px 50px;
+}
+
+header img {
+  border-radius: 50%;
+}
+
+.header-superior {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.busqueda-header button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.foto-desc {
+  display: flex;
+}
+
+h1 {
+  color: white;
+  margin-left: 8px;
+}
+
+.nav-menu {
+  margin-left: 25px;
+}
+.nav-menu button {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  width: 10px;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 20px; /* menos espacio alrededor del texto */
+  margin: 4px;
+  font-size: 17px;
+  text-align: center;
+  display: inline-block;
+  min-width: 100px; /* evita que sean demasiado pequeños */
+}
+
+.hr-menu {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.botones-inferiores {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.botones-inferiores button {
+  background-color: transparent;
+  padding: 15px 7%;
+  border: none;
+}
+
+.crud-usuario {
+  font-size: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.crud-usuario h1 {
+  margin-bottom: 70px;
+}
+
+input {
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  height: 40px;
+  width: 97%;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.guardar-crud {
+  background-color: #1ed760;
+  width: 38%;
+  height: 70px;
+  font-size: 20px;
+  white-space: nowrap;
+  margin: auto;
+}
+
+.header-cerrar-crud {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cerrar-crud {
+  margin: 10px;
+  padding: 5px;
+  width: 40px;
+  background-color: transparent;
+  border: none;
+}
+
+select {
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
