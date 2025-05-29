@@ -1,22 +1,12 @@
-import { initRouter } from "./router.js";
+import { supabase } from "./supabase.js";
+import "./router.js"; // Ya incluye y gestiona el rendering por hash
 
-console.log("main.js cargado");
+document.addEventListener("DOMContentLoaded", async () => {
+  const { data: { user } } = await supabase.auth.getUser();
 
-function extractTokenFromHash() {
-  const hash = window.location.hash;
-  if (hash) {
-    const params = new URLSearchParams(hash.substring(1));
-    const token = params.get("access_token");
-    if (token) {
-      localStorage.setItem("spotify_access_token", token);
-      window.location.hash = "";
-      return token;
-    }
+  if (!user) {
+    window.location.hash = "/login";
+  } else {
+    window.location.hash = "/crud-usuario";
   }
-  return null;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  extractTokenFromHash();
-  initRouter();
 });

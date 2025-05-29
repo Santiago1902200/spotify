@@ -1,3 +1,5 @@
+import { supabase } from "../supabase.js";
+
 export function renderSignupView() {
   const container = document.createElement("div");
   container.className = "menu-principal";
@@ -26,19 +28,38 @@ export function renderSignupView() {
       <button id="backMain">Volver</button>
     </main>
   `;
-  container.querySelector("#signupForm").addEventListener("submit", (e) => {
+
+  container.querySelector("#signupForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-    console.log(
-      "Registrando usuario:",
-      document.getElementById("signup-email").value
-    );
-    // Completa la lógica para guardar el perfil
+    const correo = document.getElementById("signup-email").value;
+    const contraseña = document.getElementById("signup-password").value;
+    const nacimiento = document.getElementById("signup-birthdate").value;
+    const genero = document.getElementById("genero").value;
+
+    const { error } = await supabase.from("usuarios").insert([
+      {
+        correo,
+        contraseña,
+        nombre: genero, // puedes reemplazar esto si quieres pedir nombre real
+        nacimiento,
+      },
+    ]);
+
+    if (error) {
+      alert("Error al registrar usuario: " + error.message);
+    } else {
+      alert("Usuario registrado correctamente.");
+      window.location.hash = "/login"; // redirige al login
+    }
   });
+
   container.querySelector("#closeSignup").addEventListener("click", () => {
-    window.navigate("/");
+    window.location.hash = "/";
   });
+
   container.querySelector("#backMain").addEventListener("click", () => {
-    window.navigate("/");
+    window.location.hash = "/";
   });
+
   return container;
 }
